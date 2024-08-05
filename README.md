@@ -1,4 +1,4 @@
-# Case Itaú - Validador de Senhas
+# Case Itaú - Validador de Senhas 
 Esta API valida senhas com base em critérios específicos de segurança.
 
 ## Execução do Projeto
