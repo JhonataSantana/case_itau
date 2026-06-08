@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap');
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --font-ui: 'DM Sans', -apple-system, sans-serif;
+  --font-mono: 'DM Mono', monospace;
+  --bg-canvas: #eef2f7;
+  --bg-surface: #ffffff;
+  --bg-surface-2: #f8fafc;
+  --bg-surface-3: #f1f5f9;
+  --border: #e2e8f0;
+  --border-2: #cbd5e1;
+  --text-1: #0f172a;
+  --text-2: #475569;
+  --text-3: #94a3b8;
+  --text-4: #cbd5e1;
+  --accent: #3b82f6;
+  --accent-dark: #1d4ed8;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --h-topbar: 48px;
+  --h-carousel: 108px;
+  --w-props: 292px;
+  --shadow-sm: 0 1px 3px rgba(15,23,42,.07), 0 1px 2px rgba(15,23,42,.04);
+  --shadow-md: 0 4px 12px rgba(15,23,42,.10), 0 2px 4px rgba(15,23,42,.06);
+  --shadow-node: 0 2px 6px rgba(15,23,42,.08), 0 0 0 1px rgba(15,23,42,.05);
+  --shadow-node-sel: 0 0 0 2.5px var(--accent), 0 4px 16px rgba(59,130,246,.18);
+  /* node colours */
+  --c-input:     #3b82f6;
+  --c-filter:    #f59e0b;
+  --c-withcol:   #8b5cf6;
+  --c-dropcol:   #ef4444;
+  --c-selcol:    #06b6d4;
+  --c-renamecol: #f97316;
+  --c-cast:      #a855f7;
+  --c-sort:      #14b8a6;
+  --c-dedup:     #ec4899;
+  --c-sql:       #64748b;
+  --c-join:      #0ea5e9;
+  --c-split:     #e879f9;
+  --c-union:     #6366f1;
+  --c-output:    #10b981;
+}
+body {
+  font-family: var(--font-ui);
+  background: var(--bg-canvas);
+  color: var(--text-1);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+  line-height: 1.5;
+}

@@ -1,0 +1,14 @@
+{
+  "id": "Produtos",
+  "nome": "Produtos_Catalogo",
+  "descricao": "Catálogo de produtos e serviços comercializados.",
+  "n_registos": 312,
+  "ultima_atualizacao": "2024-02-10",
+  "colunas": [
+    { "nome": "id_produto",  "tipo": "integer", "descricao": "Identificador único do produto" },
+    { "nome": "nome",        "tipo": "string",  "descricao": "Nome comercial do produto" },
+    { "nome": "categoria",   "tipo": "string",  "descricao": "Categoria principal" },
+    { "nome": "preco",       "tipo": "double",  "descricao": "Preço de tabela em R$" },
+    { "nome": "ativo",       "tipo": "boolean", "descricao": "Se o produto está em linha" }
+  ]
+}

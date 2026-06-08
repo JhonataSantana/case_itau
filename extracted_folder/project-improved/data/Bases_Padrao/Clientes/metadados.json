@@ -1,0 +1,15 @@
+{
+  "id": "Clientes",
+  "nome": "Clientes_Master",
+  "descricao": "Cadastro master de clientes ativos e inativos da empresa.",
+  "n_registos": 4820,
+  "ultima_atualizacao": "2024-03-01",
+  "colunas": [
+    { "nome": "id_cliente",  "tipo": "integer",  "descricao": "Identificador único do cliente" },
+    { "nome": "nome",        "tipo": "string",   "descricao": "Nome completo do cliente" },
+    { "nome": "cidade",      "tipo": "string",   "descricao": "Cidade de residência" },
+    { "nome": "estado",      "tipo": "string",   "descricao": "UF (sigla de 2 letras)" },
+    { "nome": "status",      "tipo": "string",   "descricao": "ATIVO ou INATIVO" },
+    { "nome": "data_cadastro","tipo": "date",    "descricao": "Data de criação do registro" }
+  ]
+}

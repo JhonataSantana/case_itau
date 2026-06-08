@@ -1,0 +1,17 @@
+{
+  "id": "Vendas",
+  "nome": "Vendas_Corporativo",
+  "descricao": "Histórico completo de transações de vendas corporativas.",
+  "n_registos": 15420,
+  "ultima_atualizacao": "2024-03-21",
+  "colunas": [
+    { "nome": "id_venda",    "tipo": "integer", "descricao": "Identificador único da venda" },
+    { "nome": "id_cliente",  "tipo": "integer", "descricao": "FK → Clientes.id_cliente" },
+    { "nome": "id_produto",  "tipo": "integer", "descricao": "FK → Produtos.id_produto" },
+    { "nome": "valor",       "tipo": "double",  "descricao": "Valor bruto da venda em R$" },
+    { "nome": "quantidade",  "tipo": "integer", "descricao": "Unidades vendidas" },
+    { "nome": "data_venda",  "tipo": "date",    "descricao": "Data da transação" },
+    { "nome": "status",      "tipo": "string",  "descricao": "APROVADO, CANCELADO, PENDENTE" },
+    { "nome": "canal",       "tipo": "string",  "descricao": "Canal de venda: LOJA, ONLINE, PARCEIRO" }
+  ]
+}

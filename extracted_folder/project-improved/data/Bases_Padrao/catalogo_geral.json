@@ -1,0 +1,16 @@
+{
+  "bases_disponiveis": [
+    {
+      "id": "Clientes",
+      "nome": "Clientes"
+    },
+    {
+      "id": "Vendas",
+      "nome": "Vendas"
+    },
+    {
+      "id": "Produtos",
+      "nome": "Produtos"
+    }
+  ]
+}

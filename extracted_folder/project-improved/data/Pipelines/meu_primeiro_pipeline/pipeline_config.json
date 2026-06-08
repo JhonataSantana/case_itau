@@ -1,0 +1,64 @@
+{
+  "pipeline_id": "meu_primeiro_pipeline",
+  "nome": "Meu Primeiro Pipeline",
+  "ultima_modificacao": "2026-06-07T11:19:31.836Z",
+  "versao_engine": "1.0.0",
+  "grafo": {
+    "nodes": [
+      {
+        "id": "bloco_0",
+        "type": "inputNode",
+        "position": {
+          "x": -4.5,
+          "y": -202.4
+        },
+        "data": {
+          "label": "inputNode node",
+          "query": ""
+        },
+        "width": 181,
+        "height": 87,
+        "selected": false,
+        "positionAbsolute": {
+          "x": -4.5,
+          "y": -202.4
+        },
+        "dragging": false
+      },
+      {
+        "id": "bloco_1",
+        "type": "sqlNode",
+        "position": {
+          "x": 225,
+          "y": -84.15
+        },
+        "data": {
+          "label": "sqlNode node",
+          "query": ""
+        },
+        "width": 187,
+        "height": 85,
+        "selected": true,
+        "dragging": false,
+        "positionAbsolute": {
+          "x": 225,
+          "y": -84.15
+        }
+      }
+    ],
+    "edges": [
+      {
+        "source": "bloco_0",
+        "sourceHandle": null,
+        "target": "bloco_1",
+        "targetHandle": null,
+        "id": "reactflow__edge-bloco_0-bloco_1"
+      }
+    ],
+    "viewport": {
+      "x": 49,
+      "y": 436.3,
+      "zoom": 2
+    }
+  }
+}
