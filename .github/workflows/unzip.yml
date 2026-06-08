@@ -1,0 +1,21 @@
+name: Auto Unzip 
+on: [push]
+jobs: 
+  unzip-files: 
+    runs-on: ubuntu-latest 
+    steps: 
+      - name: Checkout Repository 
+        uses: actions/checkout@v4
+        
+      - name: Extract Archive 
+        run: |
+          unzip *.zip -d extracted _folder/ 
+          rm *-zip
+          
+      - name: Commit and Push 
+        run: | 
+          git config --global user.name "github-actions[bot]" 
+          git config --global user.email "github-actions[bot]@users.noreply-github.com" 
+          git add . 
+          git commit -m "Automated zip extraction" || exit 0 
+          git push
