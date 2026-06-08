@@ -10,7 +10,7 @@ jobs:
       - name: Extract Archive 
         run: |
           unzip *.zip -d extracted_folder/ 
-          rm *-zip
+          rm *.zip
           
       - name: Commit and Push 
         run: | 
