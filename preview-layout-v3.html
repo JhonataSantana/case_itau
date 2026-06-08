@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;background:#e2e8f0;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px;-webkit-font-smoothing:antialiased}
+.frame{border-radius:10px;overflow:hidden;border:1px solid #cbd5e1;display:flex;flex-direction:column;width:980px;height:660px;box-shadow:0 20px 60px rgba(0,0,0,.15)}
+.tb{height:46px;background:#fff;border-bottom:1px solid #e2e8f0;display:flex;align-items:center;padding:0 13px;gap:9px;flex-shrink:0}
+.bi{width:24px;height:24px;background:#3b82f6;border-radius:5px;display:flex;align-items:center;justify-content:center}
+.bn{font-size:13px;font-weight:600;color:#0f172a}
+.sep{width:1px;height:16px;background:#e2e8f0;flex-shrink:0}
+.pi{font-size:12.5px;font-weight:500;color:#0f172a;border:1px solid #e2e8f0;border-radius:4px;padding:2px 8px;background:#f8fafc}
+.sb{display:inline-flex;align-items:center;gap:4px;font-size:10.5px;color:#94a3b8;background:#f8fafc;border-radius:20px;padding:2px 8px}
+.sd{width:5px;height:5px;border-radius:50%;background:#10b981}
+.sc{font-size:10px;font-family:'DM Mono',monospace;color:#94a3b8;background:#f8fafc;border-radius:3px;padding:2px 6px}
+.ta{margin-left:auto;display:flex;gap:5px}
+.btn{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;font-weight:500;height:28px;padding:0 10px;border-radius:5px;border:1px solid #e2e8f0;background:#fff;color:#475569}
+.btn-g{background:#10b981;border-color:#10b981;color:#fff}
+.btn-b{background:#3b82f6;border-color:#3b82f6;color:#fff}
+/* carousel */
+.car{height:104px;background:#fff;border-bottom:1px solid #e2e8f0;flex-shrink:0}
+.ctabs{display:flex;height:33px;border-bottom:1px solid #e2e8f0;padding:0 13px}
+.ct{display:flex;align-items:center;gap:5px;height:33px;padding:0 11px;font-size:11.5px;font-weight:500;color:#94a3b8;border-bottom:2px solid transparent;margin-bottom:-1px}
+.ct.a{color:#3b82f6;border-bottom-color:#3b82f6}
+.cdot{width:6px;height:6px;border-radius:50%}
+.citems{display:flex;align-items:center;gap:5px;padding:7px 13px;overflow-x:auto}
+.cn{display:flex;flex-direction:column;align-items:center;gap:4px;padding:5px 5px 4px;width:68px;border-radius:5px;flex-shrink:0;border:1px solid transparent}
+.cn:hover{background:#f8fafc;border-color:#e2e8f0}
+.cni{width:32px;height:32px;border-radius:6px;display:flex;align-items:center;justify-content:center}
+.cnl{font-size:9.5px;font-weight:500;color:#475569;text-align:center;line-height:1.2}
+/* main */
+.main{display:flex;flex:1;min-height:0}
+/* props */
+.pp{width:280px;background:#fff;border-right:1px solid #e2e8f0;display:flex;flex-direction:column;flex-shrink:0}
+.ph{height:42px;background:#f8fafc;border-bottom:1px solid #e2e8f0;display:flex;align-items:center;gap:8px;padding:0 13px;flex-shrink:0}
+.phi{width:21px;height:21px;border-radius:5px;display:flex;align-items:center;justify-content:center}
+.pht{font-size:12px;font-weight:600;color:#0f172a}
+.pb{padding:13px;flex:1;overflow:hidden}
+.pst{font-size:9px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#94a3b8;display:flex;align-items:center;gap:6px;margin-bottom:8px;margin-top:2px}
+.pst::after{content:'';flex:1;height:1px;background:#e2e8f0}
+.pl{font-size:10.5px;font-weight:600;color:#475569;margin-bottom:3px;display:block}
+.pi2{width:100%;padding:5px 8px;border:1px solid #e2e8f0;border-radius:4px;font-size:11.5px;margin-bottom:8px}
+.psel{width:100%;padding:5px 8px;border:1px solid #e2e8f0;border-radius:4px;font-size:11.5px;background:#f8fafc;margin-bottom:4px}
+.mb{background:#f8fafc;border:1px solid #e2e8f0;border-radius:5px;padding:9px 10px;margin-top:4px}
+.md{font-size:10.5px;color:#475569;line-height:1.5;margin-bottom:7px}
+.ms{font-size:9.5px;color:#94a3b8;margin-bottom:8px}
+.cr{display:flex;align-items:center;gap:5px;padding:3px 6px;border-radius:3px;background:#fff;border:1px solid #e2e8f0;margin-bottom:2px}
+.cname{flex:1;font-size:9.5px;font-weight:500;color:#0f172a;font-family:'DM Mono',monospace}
+.ct2{font-size:8px;font-weight:700;padding:1px 4px;border-radius:2px}
+.cd{font-size:9px;color:#94a3b8;flex:1.4}
+.ti{color:#6366f1;background:rgba(99,102,241,.08)}
+.ts{color:#059669;background:rgba(16,185,129,.08)}
+.tdouble{color:#0891b2;background:rgba(6,182,212,.08)}
+.tdate{color:#d97706;background:rgba(245,158,11,.08)}
+/* canvas */
+.ca{flex:1;display:flex;flex-direction:column;overflow:hidden}
+.cw{flex:1;position:relative;background:#eef2f7;overflow:hidden}
+.bg{position:absolute;inset:0;background-image:radial-gradient(circle,#c5d0de 1.2px,transparent 1.2px);background-size:20px 20px;opacity:.8}
+.node{background:#fff;border:1.5px solid #e2e8f0;border-radius:7px;display:flex;align-items:center;height:44px;min-width:145px;overflow:hidden;box-shadow:0 1px 4px rgba(15,23,42,.07);position:absolute}
+.node.sel{border-color:#3b82f6;box-shadow:0 0 0 2.5px rgba(59,130,246,.18),0 3px 10px rgba(15,23,42,.1)}
+.na{width:5px;height:100%;flex-shrink:0}
+.niw{width:34px;display:flex;align-items:center;justify-content:center}
+.ni{width:24px;height:24px;border-radius:5px;display:flex;align-items:center;justify-content:center}
+.nlbl{font-size:11px;font-weight:600;color:#0f172a;padding:0 10px 0 2px;white-space:nowrap}
+.hl{position:absolute;left:-5px;top:50%;transform:translateY(-50%);width:9px;height:9px;border-radius:50%;background:#94a3b8;border:2px solid #fff}
+.hl2{position:absolute;left:-5px;width:9px;height:9px;border-radius:50%;background:#94a3b8;border:2px solid #fff}
+.hr{position:absolute;right:-5px;top:50%;transform:translateY(-50%);width:9px;height:9px;border-radius:50%;border:2px solid #fff}
+.edges{position:absolute;inset:0;pointer-events:none;overflow:visible}
+/* preview */
+.pv{height:194px;background:#fff;border-top:1px solid #e2e8f0;display:flex;flex-direction:column;flex-shrink:0}
+.pvb{height:36px;background:#f8fafc;border-bottom:1px solid #e2e8f0;display:flex;align-items:center;padding:0 13px;gap:9px;flex-shrink:0}
+.pvtb{height:36px;padding:0 12px;font-size:11.5px;font-weight:500;color:#94a3b8;background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-1px}
+.pvtb.a{color:#3b82f6;border-bottom-color:#3b82f6}
+.pvtag{font-size:10px;font-family:'DM Mono',monospace;color:#3b82f6;background:rgba(59,130,246,.08);padding:2px 6px;border-radius:3px}
+.pvc{font-size:9.5px;color:#94a3b8;font-family:'DM Mono',monospace}
+.pvx{margin-left:auto;background:none;border:none;color:#94a3b8;font-size:14px;font-weight:300;cursor:pointer}
+.pvbody{flex:1;overflow:auto}
+table{width:100%;border-collapse:collapse;font-size:11px;font-family:'DM Mono',monospace}
+th{background:#f8fafc;font-size:10px;font-weight:600;padding:5px 13px;position:sticky;top:0;border-bottom:1px solid #e2e8f0;white-space:nowrap;color:#475569;font-family:'DM Sans',sans-serif;text-align:left}
+th span{display:block;font-size:8px;font-weight:400;color:#94a3b8;margin-top:1px;font-family:'DM Mono',monospace}
+td{padding:5px 13px;border-bottom:1px solid rgba(0,0,0,.03);color:#475569}
+</style>
+</head>
+<body>
+<div class="frame">
+<div class="tb">
+  <div style="display:flex;align-items:center;gap:6px;padding-right:10px;border-right:1px solid #e2e8f0">
+    <div class="bi"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 5h3M3 8h10M3 11h6" stroke="white" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="5" r="1.5" fill="white"/><circle cx="11" cy="11" r="1.5" fill="white"/></svg></div>
+    <span class="bn">DataFlow</span>
+  </div>
+  <span class="pi">pipeline_vendas_q1</span>
+  <div class="sb"><div class="sd"></div>Guardado</div>
+  <span class="sc">5b · 4c</span>
+  <div class="ta">
+    <div class="btn">Abrir</div>
+    <div class="btn">Limpar</div>
+    <div class="sep"></div>
+    <div class="btn btn-g">Compilar PySpark</div>
+    <div class="btn btn-b">Guardar</div>
+  </div>
+</div>
+<div class="car">
+  <div class="ctabs">
+    <div class="ct"><span class="cdot" style="background:#3b82f6"></span>Fonte</div>
+    <div class="ct a"><span class="cdot" style="background:#8b5cf6"></span>Transformação</div>
+    <div class="ct"><span class="cdot" style="background:#0ea5e9"></span>Junção</div>
+    <div class="ct"><span class="cdot" style="background:#10b981"></span>Saída</div>
+  </div>
+  <div class="citems">
+    <div class="cn"><div class="cni" style="background:#f59e0b"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M2 3.5h12L9.5 9.5V13l-3-1.5V9.5L2 3.5z" stroke="white" stroke-width="1.4" stroke-linejoin="round"/></svg></div><span class="cnl">Filtrar Linhas</span></div>
+    <div class="cn"><div class="cni" style="background:#8b5cf6"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M2 4h5M2 8h8M2 12h5" stroke="white" stroke-width="1.4" stroke-linecap="round"/><path d="M12 9v5M9.5 11.5h5" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="cnl">Criar Coluna</span></div>
+    <div class="cn"><div class="cni" style="background:#ef4444"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h8M2 12h12" stroke="white" stroke-width="1.4" stroke-linecap="round"/><path d="M10 6.5l4 4M14 6.5l-4 4" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg></div><span class="cnl">Remover Colunas</span></div>
+    <div class="cn"><div class="cni" style="background:#06b6d4"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="1.5" stroke="white" stroke-width="1.4"/><path d="M5 8l2 2 4-4" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="cnl">Selecionar Col.</span></div>
+    <div class="cn"><div class="cni" style="background:#f97316"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M2 13h12" stroke="white" stroke-width="1.4" stroke-linecap="round"/><path d="M3 10l7-7 2 2-7 7H3v-2z" stroke="white" stroke-width="1.4" stroke-linejoin="round"/></svg></div><span class="cnl">Renomear Coluna</span></div>
+    <div class="cn"><div class="cni" style="background:#a855f7"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M4 4h3l2 4-2 4H4l2-4L4 4z" stroke="white" stroke-width="1.3" stroke-linejoin="round"/><path d="M11 6l2 2-2 2" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="cnl">Converter Tipo</span></div>
+    <div class="cn"><div class="cni" style="background:#14b8a6"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 5h10M5 8h6M7 11h2" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg></div><span class="cnl">Ordenar</span></div>
+    <div class="cn"><div class="cni" style="background:#ec4899"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><rect x="5" y="5" width="8" height="8" rx="1.5" stroke="white" stroke-width="1.4"/><rect x="3" y="3" width="8" height="8" rx="1.5" stroke="white" stroke-width="1.4" fill="none" stroke-dasharray="2 1.5"/></svg></div><span class="cnl">Remover Duplicatas</span></div>
+    <div class="cn"><div class="cni" style="background:#64748b"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M4.5 4.5L2 8l2.5 3.5M11.5 4.5L14 8l-2.5 3.5" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 3l-2 10" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg></div><span class="cnl">SQL Customizado</span></div>
+  </div>
+</div>
+<div class="main">
+  <div class="pp">
+    <div class="ph">
+      <div class="phi" style="background:#3b82f6"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"><ellipse cx="8" cy="4.5" rx="5.5" ry="2" stroke="white" stroke-width="1.4"/><path d="M2.5 4.5v3c0 1.1 2.46 2 5.5 2s5.5-.9 5.5-2v-3" stroke="white" stroke-width="1.4"/><path d="M2.5 7.5v3c0 1.1 2.46 2 5.5 2s5.5-.9 5.5-2v-3" stroke="white" stroke-width="1.4"/></svg></div>
+      <span class="pht">Vendas Aprovadas</span>
+      <span style="font-size:9.5px;color:#94a3b8;margin-left:2px">inputNode</span>
+    </div>
+    <div class="pb">
+      <div class="pst">Identificação</div>
+      <label class="pl">Apelido do bloco</label>
+      <input class="pi2" value="Vendas Aprovadas" readonly style="font-family:'DM Sans',sans-serif"/>
+      <div class="pst">Configuração</div>
+      <label class="pl">Base de dados</label>
+      <select class="psel"><option>Vendas_Corporativo</option></select>
+      <div class="mb">
+        <div class="md">Histórico completo de transações de vendas corporativas.</div>
+        <div class="ms">15.420 registos · atualizado em 2024-03-21</div>
+        <div style="font-size:8.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#94a3b8;margin-bottom:5px">Colunas (8)</div>
+        <div class="cr"><span class="cname">id_venda</span><span class="ct2 ti">integer</span><span class="cd">ID único da venda</span></div>
+        <div class="cr"><span class="cname">id_cliente</span><span class="ct2 ti">integer</span><span class="cd">FK → Clientes</span></div>
+        <div class="cr"><span class="cname">valor</span><span class="ct2 tdouble">double</span><span class="cd">Valor bruto R$</span></div>
+        <div class="cr"><span class="cname">data_venda</span><span class="ct2 tdate">date</span><span class="cd">Data da transação</span></div>
+        <div class="cr"><span class="cname">status</span><span class="ct2 ts">string</span><span class="cd">APROVADO…</span></div>
+        <div class="cr"><span class="cname">canal</span><span class="ct2 ts">string</span><span class="cd">LOJA, ONLINE…</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="ca">
+    <div class="cw">
+      <div class="bg"></div>
+      <svg class="edges" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none">
+        <defs><marker id="a" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#94a3b8"/></marker></defs>
+        <path d="M200,95 C220,95 228,116 248,116" stroke="#94a3b8" stroke-width="1.8" fill="none" marker-end="url(#a)"/>
+        <path d="M398,116 C418,116 426,148 446,148" stroke="#94a3b8" stroke-width="1.8" fill="none" marker-end="url(#a)"/>
+        <path d="M200,95 C232,95 248,172 268,172" stroke="#94a3b8" stroke-width="1.8" fill="none" marker-end="url(#a)" stroke-dasharray="4 2" opacity=".7"/>
+        <path d="M598,148 C618,148 626,172 646,172" stroke="#94a3b8" stroke-width="1.8" fill="none" marker-end="url(#a)"/>
+      </svg>
+      <div class="node sel" style="left:36px;top:73px">
+        <div class="na" style="background:#3b82f6"></div>
+        <div class="niw"><div class="ni" style="background:#3b82f6"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"><ellipse cx="8" cy="4.5" rx="5.5" ry="2" stroke="white" stroke-width="1.4"/><path d="M2.5 4.5v3c0 1.1 2.46 2 5.5 2s5.5-.9 5.5-2v-3" stroke="white" stroke-width="1.4"/></svg></div></div>
+        <span class="nlbl">Vendas Aprovadas</span>
+        <div class="hr" style="background:#3b82f6"></div>
+      </div>
+      <div class="node" style="left:248px;top:94px">
+        <div class="na" style="background:#f59e0b"></div>
+        <div class="niw"><div class="ni" style="background:#f59e0b"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="M2 3.5h12L9.5 9.5V13l-3-1.5V9.5L2 3.5z" stroke="white" stroke-width="1.4" stroke-linejoin="round"/></svg></div></div>
+        <span class="nlbl">Filtrar Ativos</span>
+        <div class="hl"></div>
+        <div class="hr" style="background:#f59e0b"></div>
+      </div>
+      <div class="node" style="left:446px;top:126px">
+        <div class="na" style="background:#8b5cf6"></div>
+        <div class="niw"><div class="ni" style="background:#8b5cf6"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="M2 4h5M2 8h8M2 12h5" stroke="white" stroke-width="1.4" stroke-linecap="round"/><path d="M12 9v5M9.5 11.5h5" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div></div>
+        <span class="nlbl">Calc. Total</span>
+        <div class="hl"></div>
+        <div class="hr" style="background:#8b5cf6"></div>
+      </div>
+      <div class="node" style="left:268px;top:150px;min-width:148px">
+        <div class="na" style="background:#0ea5e9"></div>
+        <div class="niw"><div class="ni" style="background:#0ea5e9"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"><circle cx="5.5" cy="8" r="3.5" stroke="white" stroke-width="1.3"/><circle cx="10.5" cy="8" r="3.5" stroke="white" stroke-width="1.3"/></svg></div></div>
+        <span class="nlbl">Join Clientes</span>
+        <div class="hl2" style="top:30%"></div>
+        <div class="hl2" style="top:63%"></div>
+        <div class="hr" style="background:#0ea5e9"></div>
+      </div>
+      <div class="node" style="left:646px;top:150px">
+        <div class="na" style="background:#10b981"></div>
+        <div class="niw"><div class="ni" style="background:#10b981"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="M2 8h9M8 5l3 3-3 3" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 4v8" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg></div></div>
+        <span class="nlbl">Exportar S3</span>
+        <div class="hl"></div>
+      </div>
+    </div>
+    <div class="pv">
+      <div class="pvb">
+        <div style="display:flex">
+          <button class="pvtb">↙ Entrada</button>
+          <button class="pvtb a">↗ Saída</button>
+        </div>
+        <span class="pvtag">Vendas Aprovadas</span>
+        <span class="pvc">5 linhas · inputNode</span>
+        <span class="pvx">✕</span>
+      </div>
+      <div class="pvbody">
+        <table>
+          <thead>
+            <tr>
+              <th>id_venda<span>integer</span></th>
+              <th>id_cliente<span>integer</span></th>
+              <th>valor<span>double</span></th>
+              <th>data_venda<span>date</span></th>
+              <th>status<span>string</span></th>
+              <th>canal<span>string</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1001</td><td>101</td><td>450.50</td><td>2024-03-15</td><td>APROVADO</td><td>ONLINE</td></tr>
+            <tr><td>1002</td><td>103</td><td>1250.75</td><td>2024-03-21</td><td>APROVADO</td><td>LOJA</td></tr>
+            <tr><td>1003</td><td>104</td><td>890.00</td><td>2024-03-20</td><td>APROVADO</td><td>PARCEIRO</td></tr>
+            <tr><td>1004</td><td>101</td><td>320.00</td><td>2024-03-22</td><td>APROVADO</td><td>ONLINE</td></tr>
+            <tr><td>1005</td><td>107</td><td>75.50</td><td>2024-03-23</td><td>APROVADO</td><td>LOJA</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>
